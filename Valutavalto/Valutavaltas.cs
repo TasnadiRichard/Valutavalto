@@ -2,11 +2,11 @@
 //
 // To parse this JSON data, add NuGet 'Newtonsoft.Json' then do:
 //
-//    using Valutavalto;
+//    using Valtas;
 //
-//    var valutavalto = Valutavalto.FromJson(jsonString);
+//    var Valutavaltas = Valutavaltas.FromJson(jsonString);
 
-namespace Valutavalto
+namespace Valtas
 {
     using System;
     using System.Collections.Generic;
@@ -33,14 +33,14 @@ namespace Valutavalto
         public Dictionary<string, double> Rates { get; set; }
     }
 
-    public partial class Valutavaltas
+    public partial class Valutaatvaltas
     {
-        public static Valutavaltas FromJson(string json) => JsonConvert.DeserializeObject<Valutavaltas>(json, Valutavalto.Converter.Settings);
+        public static Valutaatvaltas FromJson(string json) => JsonConvert.DeserializeObject<Valutaatvaltas>(json, Valtas.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Valutavaltas self) => JsonConvert.SerializeObject(self, Valutavalto.Converter.Settings);
+        public static string ToJson(this Valutaatvaltas self) => JsonConvert.SerializeObject(self, Valtas.Converter.Settings);
     }
 
     internal static class Converter
